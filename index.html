@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chart</title>
+
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!--JS LIBRARIES-->
+    <!--JQUERY-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--BOOTSTRAP JS-->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--MODERNIZR-->
+    <script src ="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js" type="text/javascript" ></script>
+    <!--D3 CDN-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.js"></script>
+    <!--END JS-->
+ 
+    <!--BOOTSTRAP CSS-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+   
+   <!-- OPTIONAL TOOLTIP CODE	
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
+	-->
+    <!--CSS-->
+
+
+    <style type="text/css">
+        /* base dailygraphics styles */
+        html { -webkit-text-size-adjust: none; }
+        body {
+            margin: 0;
+            padding: 0;
+            font: 14px/1.4 Arial, Helvetica, sans-serif;
+            color: black;
+        }
+        h1 {
+            margin: 0 0 6px 0;
+            font-size: 20px;
+            color: black;
+        }
+        h2 {
+            font-weight: normal;
+            color: #666;
+            font-size: 14px;
+            margin: 0 0 22px 0;
+        }
+        .footnotes { margin-bottom: 20px; }
+        .footnotes h4 {
+            margin: 2px 0 7px 0;
+            color: #666;
+            font-size: 11px;
+        }
+        .footnotes p,
+        .footer p {
+            margin: 2px 0 0 0;
+            font-size: 11px;
+            line-height: 1.3;
+            color: #808080;
+        }
+        a, a:link, a:visited {
+            color: #4774CC;
+            text-decoration: none;
+        }
+        a:hover, a:active { opacity: 0.7; }
+    </style>
+
+<!--D3 Chart Styles-->
+    <style type="text/css">
+
+        /*call this on slow transitions*/
+        .no-mouse {
+            pointer-events: none;
+        }  
+         
+        .axis {
+            font: 10px sans-serif;
+        }
+
+        .y.axis path,
+        .y.axis line {
+            fill: none;
+            stroke: none;
+            shape-rendering: crispEdges;
+        }
+
+        .y.axis line {
+            stroke: none;
+        } 
+
+        .y.axis .tick {
+            fill: rgba(75,75,75,1);
+            font-size: 18px;
+        }
+        /*CHANGE MEDIA SIZE ON MOBILE*/
+        @media screen and (max-width: 401px) {
+            .y.axis .tick {
+                font-size: 14px;
+            }
+        }
+
+        .x.axis path,
+        .x.axis line {
+            shape-rendering: crispEdges;
+            stroke: none;
+            fill: none;
+        }
+        .x.axis text {
+            fill: gray;
+        }
+
+        .label {
+            font: 12px sans-serif;
+            font-family: helvetica;
+            fill: #11605E;
+            font-weight: bold;
+        } 
+
+        .bar {
+            fill: #11605E;
+        }
+        /*CHANGE LABLE SIZE ON MOBILE*/
+        @media screen and (max-width: 401px){
+            .label {
+                font: 12px;
+            }
+        }
+		
+        #graphic {
+            width: auto;
+        },
+
+		.nopadding {
+		   padding: 0 !important;
+		   margin: 0 !important;
+		}
+
+        </style>
+</head>
+<body>
+<div class="container nopadding">
+
+<div class="row nopadding">
+    <div class="col-xs-12 nopadding">
+        <h1>OSHA Whistleblower Complaints</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <select id="dropdown" class="btn btn-default">
+            <option value="dismissed">Dismissed</option>
+            <option value="merit">Merit</option>
+            <option value="settled">Settled</option>
+            <option value="kickout">Kicked out</option>
+            <option value="withdrawn">Withdrawn</option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div id="graphic"></div>
+    </div>
+</div>
+   <!-- <div class="footnotes">
+        <h4>Notes</h4>
+        <p>Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div> -->
+
+    <div class="footer">
+        <p>Source: CalOES</p>
+        <p>Credit: <a href="http://www.twitter.com/scottpham">Scott Pham</a>/NBC Bay Area</p>
+    </div>
+
+<!-- end container fluid -->
+</div>
+    <script src="js/graphic.js" type="text/javascript"></script>
+</body>
+</html>
