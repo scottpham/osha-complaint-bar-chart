@@ -105,7 +105,7 @@ function render(width) {
     console.log(selected);
 
     //asynchronous csv call
-    d3.csv("spills.csv", type, function(error, data) {
+    d3.csv("complaints.csv", type, function(error, data) {
         //x domain is between 0 and max of the selected
         x.domain([0, d3.max(data, function(d){ return 1700; })]);
         //y domain sorts counties based on selected value

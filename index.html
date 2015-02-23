@@ -22,12 +22,6 @@
  
     <!--BOOTSTRAP CSS-->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-   
-   <!-- OPTIONAL TOOLTIP CODE	
-    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-    <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
-	-->
-    <!--CSS-->
 
 
     <style type="text/css">
@@ -148,18 +142,23 @@
 <div class="row nopadding">
     <div class="col-xs-12 nopadding">
         <h1>OSHA Whistleblower Complaints</h1>
+        <p>The number of whistleblower complaints OSHA handles has risen over the past few years. The vast majority of complaints are dismissed without merit. If an investigator finds merit to the claim, OSHA can compel the employer to reinstate the employee with backpay.</p>
+        <p>However, not all complaints are neatly dismissed or assigned merit. A good many are "settled", meaning OSHA brokers an agreement between the complainant worker and the employer. Some are "withdrawn", meaning the employee has decided not to pursue whistleblower protection. Finally, a few are "kicked out" each year, meaining the complaint doesn't follow the rules of the whislteblower protection (by being submitted too late, for instance).</p>
+
     </div>
 </div>
 
 <div class="row">
     <div class="col-xs-12">
-        <select id="dropdown" class="btn btn-default">
+        <p>See how OSHA breaks down complaints:
+        <select id="dropdown" class="btn btn-default dropdown-toggle" type="button">
             <option value="dismissed">Dismissed</option>
             <option value="merit">Merit</option>
             <option value="settled">Settled</option>
             <option value="kickout">Kicked out</option>
             <option value="withdrawn">Withdrawn</option>
         </select>
+    </p>
     </div>
 </div>
 
@@ -168,13 +167,13 @@
         <div id="graphic"></div>
     </div>
 </div>
-   <!-- <div class="footnotes">
+   <div class="footnotes">
         <h4>Notes</h4>
-        <p>Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div> -->
+        <p>Yearly totals represent national complaints aggregated from all regional OSHA offices.</p>
+    </div>
 
     <div class="footer">
-        <p>Source: OSHA</p>
+        <p>Source: <a href="https://www.documentcloud.org/documents/1671901-wb-data-fy05-14.html">OSHA</a></p>
         <p>Credit: <a href="http://www.twitter.com/scottpham">Scott Pham</a>/NBC Bay Area</p>
     </div>
 
